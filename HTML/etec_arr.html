@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <title>JavaScript_2</title>
+</head>
+<body>
+    <div style="margin-left: 24%; margin-top: 20px;">
+        <input type="text" id="id" placeholder="Input ID">
+        <input type="text" id="name" placeholder="Input NAME">
+        <input type="text" id="qty" placeholder="Input QTY">
+        <input type="text" id="price" placeholder="Input PRICE ">
+        <button class="btn btn-primary "onclick="addRow()">Add New</button>
+    </div>
+    <table style="margin: auto;" class="table table-dark w-75  table-bordered mt-3 " id="myTable">
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+      let etec_arr =[
+            {
+
+            id:1,
+            name:"Apple",
+            qty:12,
+            price:2.4
+            },
+            {
+            id:2,
+            name:"Orange",
+            qty:9,
+            price:24
+            },
+            {
+            id:3,
+            name:"Banana",
+            qty:5,
+            price:2
+            }
+    ];
+    let back ="";
+    back=`<tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>QTY</th>
+            <th>PRICE</th>
+        </tr>`
+    for(let i =0; i<etec_arr.length; i++){
+
+        back+=`
+        <tr>
+            
+            <td>${etec_arr[i].id}</td>
+            <td>${etec_arr[i].name}</td>
+            <td>${etec_arr[i].qty}</td>
+            <td>${etec_arr[i].price}</td>
+        </tr>
+        `
+        document.querySelector('table').innerHTML=back;
+    }
+    function addRow() {
+    var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.rows.length);
+
+    var col1 = newRow.insertCell(0);
+    var col2 = newRow.insertCell(1);
+    var col3 = newRow.insertCell(2);
+    var col4 = newRow.insertCell(3);
+
+    let id = document.getElementById("id").value;
+    col1.innerHTML=id;
+    let name = document.getElementById("name").value;
+    col2.innerHTML=name;
+    let qty = document.getElementById("qty").value;
+    col3.innerHTML=qty;
+    let price = document.getElementById("price").value;
+    col4.innerHTML=price;
+
+    
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/em.css">
+    <title>JavaScript_1</title>
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3 style="text-align: center;color: burlywood;">Information Employee</h3>
+                        <form class="requires-validation" novalidate>
+
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" id="id" placeholder="Enter ID" required>
+                               
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" id="name" placeholder="Enter Name" required>
+                                
+                            </div>
+
+                           <div class="col-md-12">
+                                <select class="form-select mt-3" required>
+                                      <option value="">Male</option>
+                                      <option value="jweb">Female</option>
+                                      <option value="sweb">Other</option>
+                                      
+                               </select>
+                                
+                           </div>
+                         <div class="col-md-12">
+                            <input class="form-control" type="email" id="position" placeholder="Enter Position" required>
+                            
+                        </div>
+                         <div class="col-md-12">
+                            <input class="form-control" type="email" id="salary" placeholder="Enter Salary" required>
+                             
+                        </div>
+
+                            <div class="form-button mt-3">
+                                <button  type="button" class="btn btn-primary" onclick="myFunction()">Submit</button>
+                            </div><br>
+                            <div class="col-md-12">
+                              
+                               <textarea style="height: 40px;" id="demo" placeholder="Salary"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                    
+                                <textarea style="height: 40px;" id="demo1" placeholder="Position"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea style="height: 40px;" id="demo2" placeholder="Total"></textarea>
+                                 
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const myFunction = () => {
+                let input = parseFloat(document.getElementById('salary').value);
+                document.getElementById("demo").innerHTML = input;
+                let input1 = document.getElementById('position').value;
+                document.getElementById("demo1").innerHTML = input1;
+
+                let total;
+
+                if (input1 === "Manager") {
+                    total = input + (input * 15 / 100);
+                } else if (input1 === "Stuff") {
+                    total = input + (input * 10 / 100);
+                } else if (input1 === "Acc") {
+                    total = input + (input * 15 / 100);
+                } else if (input1 === "IT") {
+                    total = input + (input * 25 / 100);
+                }
+
+                document.getElementById("demo2").innerHTML = total;
+        }
+     </script>
+</body>
+</html>
